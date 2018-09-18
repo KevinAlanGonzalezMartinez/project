@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Compras</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Telefono</th>
+      <th>Compra</th>
+      <th>Cantidad</th>
+      <th>Total a pagar</th>
+      <th>Fecha</th>
+      <th colspan="3"> Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.name %></td>
+        <td><%= client.phone %></td>
+        <td><%= client.soriana.product %></td>
+        <td><%= client.soriana.quantity %></td>
+        <%total= client.soriana.quantity * client.soriana.price %>
+        <td><%= "\$#{total}.00" %></td>
+        <td><%= client.created_at.strftime("%d-%m-%Y")%></td>
+        <td><%= link_to 'Show', client %></td>
+        <td><%= link_to 'Edit', edit_client_path(client) %></td>
+        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Client', new_client_path, class: 'btn btn-success'%>

@@ -1,0 +1,9 @@
+inherit_from: .rubocop_todo.yml
+
+Style/ClassCheck:
+  Exclude:
+    - 'lib/trailblazer/rails/cell.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/trailblazer/rails/controller.rb'

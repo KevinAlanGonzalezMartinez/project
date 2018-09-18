@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @soriana.product %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @soriana.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @soriana.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_soriana_path(@soriana) %> |
+<%= link_to 'Back', sorianas_path %>

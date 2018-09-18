@@ -1,0 +1,19 @@
+<table border="1">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+
+    <% @sorianas.each do |soriana| %>
+      <tr>
+        <td><%= soriana.product %></td>
+        <td><%= soriana.price %></td>
+        <td><%= soriana.quantity %></td>
+        <td><%= link_to 'Show', soriana %></td>
+        <td><%= link_to 'Edit', edit_soriana_path(soriana) %></td>
+        <td><%= link_to 'Destroy', soriana, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+</table>

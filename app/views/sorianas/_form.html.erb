@@ -1,0 +1,23 @@
+<%= simple_form_for(soriana, remote: request.xhr?, html: { data: { modal: true } }) do |form| %>
+  <div class="modal-body">
+    <div class="field">
+      <%= form.label :'Product: ' %>
+      <%= form.text_field :product %>
+    </div>
+
+    <div class="field">
+      <%= form.label :'Price: ' %>
+      <%= form.number_field :price %>
+    </div>
+
+    <div class="field">
+      <%= form.label :'Quantity: ' %>
+      <%= form.number_field :quantity %>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <%= form.button :submit, class: 'btn-success' %>
+    <%= link_to 'Back', sorianas_path %>
+  </div>
+<%end%>

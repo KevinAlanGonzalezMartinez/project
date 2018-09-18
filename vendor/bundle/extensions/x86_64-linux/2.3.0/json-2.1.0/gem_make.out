@@ -1,0 +1,13 @@
+current directory: /home/desarrollador1/Documentos/practicas/project/vendor/bundle/gems/json-2.1.0/ext/json
+/usr/bin/ruby2.3 -r ./siteconf20180910-22725-976qgp.rb extconf.rb
+creating Makefile
+
+current directory: /home/desarrollador1/Documentos/practicas/project/vendor/bundle/gems/json-2.1.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/desarrollador1/Documentos/practicas/project/vendor/bundle/gems/json-2.1.0/ext/json
+make "DESTDIR="
+make: No se hace nada para 'all'.
+
+current directory: /home/desarrollador1/Documentos/practicas/project/vendor/bundle/gems/json-2.1.0/ext/json
+make "DESTDIR=" install

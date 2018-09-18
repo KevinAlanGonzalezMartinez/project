@@ -1,0 +1,15 @@
+class <%= class_name %> <%= parent? ? "#{options[:parent].classify}" : "" %>
+  include Neo4j::ActiveNode
+<% attributes.reject(&:reference?).each do |attribute| -%>
+  property :<%= attribute.name %><%= ", type: #{attribute.type_class}" unless attribute.type_class == 'any' %><%= "\n  " + index_fragment if index_fragment = index_fragment(attribute.name) %>
+<% end -%>
+
+<% attributes.select(&:reference?).each do |attribute| -%>
+  has_one :in_or_out_or_both, :<%= attribute.name %>, type: :FILL_IN_RELATIONSHIP_TYPE_HERE
+<% end -%>
+
+<%= has_many_statements if has_many? -%>
+<%= has_one_statements if has_one? -%>
+
+<%= timestamp_statements if timestamps? -%>
+end

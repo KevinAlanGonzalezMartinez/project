@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag 'soriana.png' %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Total</th>
+      <th colspan="3"> Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sorianas.each do |soriana| %>
+      <tr>
+        <td><%= soriana.product %></td>
+        <td><%= "\$#{soriana.price}.00" %></td>
+        <td><%= soriana.quantity %></td>
+        <td><%="\$#{soriana.price * soriana.quantity}.00"%></td>
+        <td><%= link_to soriana_path(soriana.id, format: 'pdf') do%>
+          <li class="fa fa-search"></li>
+        <%end%></td>
+        <td><%= link_to edit_soriana_path(soriana), data: { modal: true } do%>
+          <li class="fa fa-pencil"> </li>
+        <%end%></td>
+        <td><%= link_to soriana, method: :delete, data: { confirm: 'Are you sure?' } do%>
+          <li class="fa fa-trash"></li>
+        <%end%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<center>
+<h5>Total: <%= "\$#{Soriana.pluck('sum(price * quantity)').join}.00"%></h2>
+</center
+
+<br>
+
+<p style="font-size:120%;">
+  Descargar:
+  <%= link_to "CSV", sorianas_path(format: "csv") %> |
+  <%= link_to "Excel", sorianas_path(format: "xls") %>
+</p>
+<br>
+<h2>Importar ventas</h2>
+<%= form_tag import_sorianas_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Importar" %>
+<% end %>

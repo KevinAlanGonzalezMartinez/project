@@ -1,0 +1,33 @@
+## MAC OS
+.DS_Store
+
+## TEXTMATE
+*.tmproj
+tmtags
+
+## EMACS
+*~
+\#*
+.\#*
+
+## VIM
+*.swp
+
+# RVM
+.rvmrc
+
+## PROJECT::GENERAL
+coverage
+rdoc
+pkg
+vendor
+
+## PROJECT::SPECIFIC
+tmp
+db
+test/rails_app/log
+
+## NETBEANS
+nbproject
+
+.vagrant

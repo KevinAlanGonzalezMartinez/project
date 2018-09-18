@@ -1,0 +1,20 @@
+current directory: /home/desarrollador1/Documentos/practicas/project/vendor/bundle/gems/mini_racer-0.2.0/ext/mini_racer_extension
+/usr/bin/ruby2.3 -r ./siteconf20180911-17013-lejj3g.rb extconf.rb
+checking for main() in -lpthread... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/desarrollador1/Documentos/practicas/project/vendor/bundle/extensions/x86_64-linux/2.3.0/mini_racer-0.2.0/mkmf.log
+
+current directory: /home/desarrollador1/Documentos/practicas/project/vendor/bundle/gems/mini_racer-0.2.0/ext/mini_racer_extension
+make "DESTDIR=" clean
+
+current directory: /home/desarrollador1/Documentos/practicas/project/vendor/bundle/gems/mini_racer-0.2.0/ext/mini_racer_extension
+make "DESTDIR="
+compiling mini_racer_extension.cc
+linking shared-object mini_racer_extension.so
+
+current directory: /home/desarrollador1/Documentos/practicas/project/vendor/bundle/gems/mini_racer-0.2.0/ext/mini_racer_extension
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 mini_racer_extension.so ./.gem.20180911-17013-1uj8liu
